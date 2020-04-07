@@ -15,6 +15,20 @@ public class StringTasks {
      * Работайте со строкой, НЕ надо ее переводить в массив байт (это можно использовать только для цикла)
      * У класса Character есть полезные методы, например Character.isDigit()
      */
+    public static int greatValueOf(String s) {
+        int res = 0;
+        int currentChar = 0;
+        int counter = 1;
+        char[] sChar = s.toCharArray();
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isDigit(sChar[i])) {
+                currentChar = (int) sChar[i];
+                res = res + counter * currentChar;
+            }
+        }
+        return res;
+    }
+
     public static Number valueOf(String str) {
         if (str == null || str.isEmpty()) {
             return null;
