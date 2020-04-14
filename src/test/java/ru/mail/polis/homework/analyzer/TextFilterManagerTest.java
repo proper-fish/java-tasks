@@ -27,7 +27,7 @@ public class TextFilterManagerTest {
         assertEquals("GOOD", manager.analyze("").toString());
         assertEquals("GOOD", manager.analyze(null).toString());
         assertEquals("GOOD", manager.analyze("Скажите код из смс").toString());
-        assertEquals("GOOD", manager.analyze("Ооооооочень длиннннннаааааяяяя стрроооооооккккаааааа").toString());
+        assertEquals("LINK", manager.analyze("Смотрите интересные лекции https://ok.ru/technopolis").toString());
     }
 
     @Test
