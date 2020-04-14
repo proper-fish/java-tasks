@@ -35,7 +35,7 @@ public interface TextAnalyzer {
         return new LinkAnalyzer();
     }
 
-    boolean isTriggered(String text);
+    boolean isTriggered(String input);
 
     FilterType getFilterType();
 }

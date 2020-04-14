@@ -3,8 +3,8 @@ package ru.mail.polis.homework.analyzer;
 public class NegativeTextAnalyzer implements TextAnalyzer {
 
     @Override
-    public boolean isTriggered(String text) {
-        if (text.contains(":(") || text.contains(":|") || text.contains("=(")) {
+    public boolean isTriggered(String input) {
+        if (input.contains(":(") || input.contains(":|") || input.contains("=(")) {
             return true;
         }
         return false;

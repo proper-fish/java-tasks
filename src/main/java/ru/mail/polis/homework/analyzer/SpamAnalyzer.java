@@ -8,9 +8,9 @@ public class SpamAnalyzer implements TextAnalyzer {
     }
 
     @Override
-    public boolean isTriggered(String text) {
+    public boolean isTriggered(String input) {
         for (String spamWord : spam) {
-            if (text.contains(spamWord)) {
+            if (input.contains(spamWord)) {
                 return true;
             }
         }

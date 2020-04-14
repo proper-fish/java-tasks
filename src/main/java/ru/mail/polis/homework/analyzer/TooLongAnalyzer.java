@@ -8,8 +8,8 @@ public class TooLongAnalyzer implements TextAnalyzer {
     }
 
     @Override
-    public boolean isTriggered(String text) {
-        return text.length() > maxLength;
+    public boolean isTriggered(String input) {
+        return input.length() > maxLength;
     }
 
     @Override

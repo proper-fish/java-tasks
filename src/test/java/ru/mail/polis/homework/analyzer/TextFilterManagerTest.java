@@ -20,6 +20,17 @@ public class TextFilterManagerTest {
     }
 
     @Test
+    public void analyzeLinkFilters() {
+        TextFilterManager manager = new TextFilterManager(new TextAnalyzer[]{TextAnalyzer.createLinkAnalyzer()});
+        assertEquals("LINK", manager.analyze("Привет, заходи" +
+                " https://www.youtube.com/watch?v=gtg1tW4qQyQ&list=FLe-Z5B0HwXFf2JyeOUefG9Q&index=16&t=0s").toString());
+        assertEquals("GOOD", manager.analyze("").toString());
+        assertEquals("GOOD", manager.analyze(null).toString());
+        assertEquals("GOOD", manager.analyze("Скажите код из смс").toString());
+        assertEquals("GOOD", manager.analyze("Ооооооочень длиннннннаааааяяяя стрроооооооккккаааааа").toString());
+    }
+
+    @Test
     public void analyzeOnlyLongFilter() {
         TextFilterManager manager = new TextFilterManager(new TextAnalyzer[]{TextAnalyzer.createTooLongAnalyzer(19)});
         assertEquals("GOOD", manager.analyze("Привет, я Петя :(").toString());
